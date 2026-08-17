@@ -1,5 +1,5 @@
 
-  # NADI App
+  # NADI App 
 
   This is a code bundle for NADI App. The original project is available at https://www.figma.com/design/Ixnb1DngPfol1xHFpSbkAL/NADI-App.
 

@@ -83,6 +83,7 @@ src/
 
 This is a design prototype, not a production application. Data is fully mocked; no network requests are made. It is intended for design reviews, investor demos, and engineering handoff conversations.
 
+
 ## License
 
 MIT — free to fork, remix, and learn from.

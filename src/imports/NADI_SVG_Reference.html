@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NADI — SVG Reference: Logo + Wristband</title>
+<style>
+  body { background: #1E1508; font-family: 'Courier New', monospace; color: #C9B8A0; padding: 40px; }
+  h1 { font-family: sans-serif; color: #E09050; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 6px; }
+  .label { font-size: 10px; letter-spacing: 2px; color: #6A5030; text-transform: uppercase; margin-bottom: 24px; display: block; }
+  .section { margin-bottom: 72px; }
+  .preview { background: #F5F0EB; border-radius: 20px; padding: 40px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+  .preview-dark { background: #2E2010; border-radius: 20px; padding: 40px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+  .row { display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start; }
+
+  /* BREATHING ANIMATIONS — required for wristband pod */
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.72; }
+    50%       { transform: scale(1.13); opacity: 1; }
+  }
+  .pod-core      { animation: breathe 2.8s ease-in-out infinite; transform-origin: center; }
+  .pod-ring      { animation: breathe 2.8s ease-in-out infinite; transform-origin: center; animation-delay: -1.4s; }
+  .pod-core-fast { animation: breathe 1.8s ease-in-out infinite; transform-origin: center; }
+  .pod-ring-fast { animation: breathe 1.8s ease-in-out infinite; transform-origin: center; animation-delay: -0.9s; }
+  .pod-core-slow { animation: breathe 4s   ease-in-out infinite; transform-origin: center; }
+  .pod-ring-slow { animation: breathe 4s   ease-in-out infinite; transform-origin: center; animation-delay: -2s; }
+
+  @keyframes floatLogo {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+  }
+  .float { animation: floatLogo 4s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!--   SECTION A — NADI LOGO (HERO / LARGE — 200×200 viewBox)    -->
+<!-- ============================================================ -->
+<div class="section">
+  <h1>Logo — Hero (Large)</h1>
+  <span class="label">Used in hero section + waitlist. 120×120px rendered. floatLogo animation + drop-shadow.</span>
+
+  <div class="row">
+    <div>
+      <div class="preview">
+        <!-- ★ COPY THIS ENTIRE SVG INTO FIGMA MAKE ★ -->
+        <svg class="float" width="120" height="120" viewBox="0 0 200 200" fill="none"
+             style="filter:drop-shadow(0 12px 32px rgba(196,114,42,0.35))">
+          <!-- tile background: amber-to-deep-amber diagonal gradient -->
+          <rect width="200" height="200" rx="42" fill="url(#heroTile)"/>
+          <!-- warm glow base beneath petals -->
+          <ellipse cx="100" cy="130" rx="50" ry="22" fill="rgba(180,60,20,0.35)"/>
+          <!-- OUTER petal — deep amber-red, widest -->
+          <path d="M100 30 C100 30 58 82 58 118 C58 145 76 168 100 168 C124 168 142 145 142 118 C142 82 100 30 100 30Z"
+                fill="url(#petal1)"/>
+          <!-- MID petal — warm amber-gold -->
+          <path d="M100 52 C100 52 68 94 68 120 C68 142 82 158 100 158 C118 158 132 142 132 120 C132 94 100 52 100 52Z"
+                fill="url(#petal2)"/>
+          <!-- INNER petal — bright gold, narrowest -->
+          <path d="M100 74 C100 74 80 106 80 122 C80 138 89 150 100 150 C111 150 120 138 120 122 C120 106 100 74 100 74Z"
+                fill="url(#petal3)"/>
+          <!-- core highlight glow -->
+          <ellipse cx="100" cy="118" rx="12" ry="18" fill="url(#coreGlow)"/>
+
+          <!-- NO top dot on hero logo -->
+
+          <defs>
+            <linearGradient id="heroTile" x1="0" y1="0" x2="200" y2="200">
+              <stop offset="0%"   stop-color="#CE7E35"/>
+              <stop offset="100%" stop-color="#8A4E1A"/>
+            </linearGradient>
+            <radialGradient id="petal1" cx="50%" cy="65%" r="55%">
+              <stop offset="0%"   stop-color="#F0C84A" stop-opacity="0.7"/>
+              <stop offset="50%"  stop-color="#C4722A" stop-opacity="0.75"/>
+              <stop offset="100%" stop-color="#7A3810" stop-opacity="0.9"/>
+            </radialGradient>
+            <radialGradient id="petal2" cx="50%" cy="60%" r="55%">
+              <stop offset="0%"   stop-color="#F5D870" stop-opacity="0.85"/>
+              <stop offset="55%"  stop-color="#D4A847" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#C4722A" stop-opacity="0.7"/>
+            </radialGradient>
+            <radialGradient id="petal3" cx="50%" cy="55%" r="55%">
+              <stop offset="0%"   stop-color="#FFFBE8" stop-opacity="1"/>
+              <stop offset="40%"  stop-color="#F0D060" stop-opacity="0.95"/>
+              <stop offset="100%" stop-color="#D4A847" stop-opacity="0.8"/>
+            </radialGradient>
+            <radialGradient id="coreGlow" cx="50%" cy="40%" r="60%">
+              <stop offset="0%"   stop-color="#FFFFFF"  stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#F0C84A"  stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!--   SECTION C — WRISTBAND: WARM STATE                         -->
+<!-- ============================================================ -->
+<div class="section">
+  <h1>Wristband — Warm State (37–38°C)</h1>
+  <span class="label">Pod core: amber-gold. Breathing fast (1.8s). Strands at FULL opacity.</span>
+  <div class="preview">
+    <!-- ★ COPY THIS ENTIRE SVG INTO FIGMA MAKE ★ -->
+    <svg width="260" height="60" viewBox="0 0 260 60" style="overflow:visible">
+      <defs>
+        <!-- clip to strap shape -->
+        <clipPath id="bandClipW">
+          <rect x="10" y="5" width="240" height="50" rx="25"/>
+        </clipPath>
+        <!-- strap fill: warm stone, fades at both ends -->
+        <linearGradient id="strapW" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#C9B8A0" stop-opacity="0"/>
+          <stop offset="25%"  stop-color="#C9B8A0"/>
+          <stop offset="75%"  stop-color="#C9B8A0"/>
+          <stop offset="100%" stop-color="#C9B8A0" stop-opacity="0"/>
+        </linearGradient>
+        <!-- pod core radialGradient: gold → terracotta → dark amber -->
+        <radialGradient id="coreWarm" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#ECC870"/>
+          <stop offset="60%"  stop-color="#C4722A"/>
+          <stop offset="100%" stop-color="#8A4E1A"/>
+        </radialGradient>
+      </defs>
+
+      <!-- STRAP BASE -->
+      <rect x="10" y="5" width="240" height="50" rx="25"
+            fill="url(#strapW)" stroke="#A89880" stroke-width="0.5"/>
+
+      <!-- THREE WOVEN STRANDS (clipped to strap) -->
+      <g clip-path="url(#bandClipW)">
+        <!-- AMBER strand: shadow then colour -->
+        <path d="M10,30 Q50,17 90,30 Q130,43 170,30 Q210,17 250,30"
+              fill="none" stroke="#8A4E1A" stroke-width="13" stroke-opacity="0.5"/>
+        <path d="M10,30 Q50,17 90,30 Q130,43 170,30 Q210,17 250,30"
+              fill="none" stroke="#C4722A" stroke-width="8"/>
+        <!-- GOLD strand: shadow then colour (inverse wave) -->
+        <path d="M10,30 Q50,43 90,30 Q130,17 170,30 Q210,43 250,30"
+              fill="none" stroke="#9A7828" stroke-width="14" stroke-opacity="0.5"/>
+        <path d="M10,30 Q50,43 90,30 Q130,17 170,30 Q210,43 250,30"
+              fill="none" stroke="#D4A847" stroke-width="9"/>
+        <!-- STONE strand: gentle undulation -->
+        <path d="M10,25 Q50,30 90,25 Q130,20 170,25 Q210,30 250,25"
+              fill="none" stroke="#A89880" stroke-width="7" stroke-opacity="0.8"/>
+      </g>
+
+      <!-- LEFT CLASP -->
+      <rect x="8" y="14" width="12" height="32" rx="2"
+            fill="#3E3018" stroke="#6A5030" stroke-width="0.8"/>
+      <circle cx="14" cy="22" r="1.5" fill="#6A5030"/>
+      <circle cx="14" cy="30" r="1.5" fill="#6A5030"/>
+      <circle cx="14" cy="38" r="1.5" fill="#6A5030"/>
+
+      <!-- RIGHT CLASP -->
+      <rect x="240" y="14" width="12" height="32" rx="2"
+            fill="#3E3018" stroke="#6A5030" stroke-width="0.8"/>
+      <circle cx="246" cy="22" r="1.5" fill="#6A5030"/>
+      <circle cx="246" cy="30" r="1.5" fill="#6A5030"/>
+      <circle cx="246" cy="38" r="1.5" fill="#6A5030"/>
+
+      <!-- THE SEAT POD -->
+      <ellipse cx="130" cy="30" rx="20" ry="16"
+               fill="#2E2010" stroke="#6A5030" stroke-width="1.5"/>
+      <ellipse cx="130" cy="30" rx="14" ry="11"
+               fill="#1E1508" stroke="#8A4E1A" stroke-width="0.8"/>
+      <!-- breathing ring -->
+      <circle cx="130" cy="30" r="14"
+              fill="#C4722A" fill-opacity="0.18" class="pod-ring-fast"/>
+      <!-- breathing core orb -->
+      <circle cx="130" cy="30" r="9"
+              fill="url(#coreWarm)" class="pod-core-fast"/>
+      <!-- specular highlight -->
+      <ellipse cx="126" cy="26" rx="3" ry="2"
+               fill="white" fill-opacity="0.28"/>
+
+      <!-- CAPTURE BUTTON (right of pod) -->
+      <rect x="148" y="26" width="9" height="8" rx="2"
+            fill="#3E3018" stroke="#A08050" stroke-width="0.7"/>
+      <circle cx="152.5" cy="30" r="2.5"
+              fill="#8A4E1A" fill-opacity="0.72"/>
+    </svg>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!--   SECTION D — WRISTBAND: COOLING STATE                      -->
+<!-- ============================================================ -->
+<div class="section">
+  <h1>Wristband — Cooling State (30–32°C)</h1>
+  <span class="label">Pod core: muted stone. Breathing slow (4s). Strands dimmed to 60% opacity.</span>
+  <div class="preview">
+    <!-- ★ COPY THIS ENTIRE SVG INTO FIGMA MAKE ★ -->
+    <svg width="260" height="60" viewBox="0 0 260 60" style="overflow:visible">
+      <defs>
+        <clipPath id="bandClipC">
+          <rect x="10" y="5" width="240" height="50" rx="25"/>
+        </clipPath>
+        <linearGradient id="strapC" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#C9B8A0" stop-opacity="0"/>
+          <stop offset="25%"  stop-color="#C9B8A0"/>
+          <stop offset="75%"  stop-color="#C9B8A0"/>
+          <stop offset="100%" stop-color="#C9B8A0" stop-opacity="0"/>
+        </linearGradient>
+        <!-- pod core: pale stone fading to warm brown -->
+        <radialGradient id="coreCool" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#E4D8C4"/>
+          <stop offset="60%"  stop-color="#A89880"/>
+          <stop offset="100%" stop-color="#6A5030"/>
+        </radialGradient>
+      </defs>
+
+      <rect x="10" y="5" width="240" height="50" rx="25"
+            fill="url(#strapC)" stroke="#A89880" stroke-width="0.5"/>
+
+      <!-- STRANDS — all at reduced opacity (cooling/dimmed) -->
+      <g clip-path="url(#bandClipC)">
+        <path d="M10,30 Q50,17 90,30 Q130,43 170,30 Q210,17 250,30"
+              fill="none" stroke="#8A4E1A" stroke-width="13" stroke-opacity="0.3"/>
+        <path d="M10,30 Q50,17 90,30 Q130,43 170,30 Q210,17 250,30"
+              fill="none" stroke="#C4722A" stroke-width="8" stroke-opacity="0.6"/>
+        <path d="M10,30 Q50,43 90,30 Q130,17 170,30 Q210,43 250,30"
+              fill="none" stroke="#9A7828" stroke-width="14" stroke-opacity="0.3"/>
+        <path d="M10,30 Q50,43 90,30 Q130,17 170,30 Q210,43 250,30"
+              fill="none" stroke="#D4A847" stroke-width="9" stroke-opacity="0.6"/>
+        <path d="M10,25 Q50,30 90,25 Q130,20 170,25 Q210,30 250,25"
+              fill="none" stroke="#A89880" stroke-width="7" stroke-opacity="0.5"/>
+      </g>
+
+      <rect x="8" y="14" width="12" height="32" rx="2" fill="#3E3018" stroke="#6A5030" stroke-width="0.8"/>
+      <circle cx="14" cy="22" r="1.5" fill="#6A5030"/>
+      <circle cx="14" cy="30" r="1.5" fill="#6A5030"/>
+      <circle cx="14" cy="38" r="1.5" fill="#6A5030"/>
+      <rect x="240" y="14" width="12" height="32" rx="2" fill="#3E3018" stroke="#6A5030" stroke-width="0.8"/>
+      <circle cx="246" cy="22" r="1.5" fill="#6A5030"/>
+      <circle cx="246" cy="30" r="1.5" fill="#6A5030"/>
+      <circle cx="246" cy="38" r="1.5" fill="#6A5030"/>
+
+      <ellipse cx="130" cy="30" rx="20" ry="16" fill="#2E2010" stroke="#6A5030" stroke-width="1.5"/>
+      <ellipse cx="130" cy="30" rx="14" ry="11" fill="#1E1508" stroke="#8A4E1A" stroke-width="0.8"/>
+      <!-- slow breathing — stone tint -->
+      <circle cx="130" cy="30" r="14" fill="#A89880" fill-opacity="0.18" class="pod-ring-slow"/>
+      <circle cx="130" cy="30" r="9"  fill="url(#coreCool)" class="pod-core-slow"/>
+      <ellipse cx="126" cy="26" rx="3" ry="2" fill="white" fill-opacity="0.18"/>
+      <rect x="148" y="26" width="9" height="8" rx="2" fill="#3E3018" stroke="#A08050" stroke-width="0.7"/>
+      <circle cx="152.5" cy="30" r="2.5" fill="#8A4E1A" fill-opacity="0.72"/>
+    </svg>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!--   SECTION E — WRISTBAND: NEUTRAL STATE                      -->
+<!-- ============================================================ -->
+<div class="section">
+  <h1>Wristband — Neutral State (34–35°C)</h1>
+  <span class="label">Pod core: warm gold-brown. Breathing default (2.8s). Strands mid opacity.</span>
+  <div class="preview">
+    <!-- ★ COPY THIS ENTIRE SVG INTO FIGMA MAKE ★ -->
+    <svg width="260" height="60" viewBox="0 0 260 60" style="overflow:visible">
+      <defs>
+        <clipPath id="bandClipN">
+          <rect x="10" y="5" width="240" height="50" rx="25"/>
+        </clipPath>
+        <linearGradient id="strapN" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#C9B8A0" stop-opacity="0"/>
+          <stop offset="25%"  stop-color="#C9B8A0"/>
+          <stop offset="75%"  stop-color="#C9B8A0"/>
+          <stop offset="100%" stop-color="#C9B8A0" stop-opacity="0"/>
+        </linearGradient>
+        <!-- pod core: warm gold → warm brown -->
+        <radialGradient id="coreNeutral" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#C8A870"/>
+          <stop offset="60%"  stop-color="#A08050"/>
+          <stop offset="100%" stop-color="#6A5030"/>
+        </radialGradient>
+      </defs>
+
+      <rect x="10" y="5" width="240" height="50" rx="25"
+            fill="url(#strapN)" stroke="#A89880" stroke-width="0.5"/>
+
+      <!-- STRANDS — medium opacity (balanced state) -->
+      <g clip-path="url(#bandClipN)">
+        <path d="M10,30 Q50,17 90,30 Q130,43 170,30 Q210,17 250,30"
+              fill="none" stroke="#8A4E1A" stroke-width="13" stroke-opacity="0.4"/>
+        <path d="M10,30 Q50,17 90,30 Q130,43 170,30 Q210,17 250,30"
+              fill="none" stroke="#C4722A" stroke-width="8" stroke-opacity="0.8"/>
+        <path d="M10,30 Q50,43 90,30 Q130,17 170,30 Q210,43 250,30"
+              fill="none" stroke="#9A7828" stroke-width="14" stroke-opacity="0.4"/>
+        <path d="M10,30 Q50,43 90,30 Q130,17 170,30 Q210,43 250,30"
+              fill="none" stroke="#D4A847" stroke-width="9" stroke-opacity="0.8"/>
+        <path d="M10,25 Q50,30 90,25 Q130,20 170,25 Q210,30 250,25"
+              fill="none" stroke="#A89880" stroke-width="7" stroke-opacity="0.7"/>
+      </g>
+
+      <rect x="8" y="14" width="12" height="32" rx="2" fill="#3E3018" stroke="#6A5030" stroke-width="0.8"/>
+      <circle cx="14" cy="22" r="1.5" fill="#6A5030"/>
+      <circle cx="14" cy="30" r="1.5" fill="#6A5030"/>
+      <circle cx="14" cy="38" r="1.5" fill="#6A5030"/>
+      <rect x="240" y="14" width="12" height="32" rx="2" fill="#3E3018" stroke="#6A5030" stroke-width="0.8"/>
+      <circle cx="246" cy="22" r="1.5" fill="#6A5030"/>
+      <circle cx="246" cy="30" r="1.5" fill="#6A5030"/>
+      <circle cx="246" cy="38" r="1.5" fill="#6A5030"/>
+
+      <ellipse cx="130" cy="30" rx="20" ry="16" fill="#2E2010" stroke="#6A5030" stroke-width="1.5"/>
+      <ellipse cx="130" cy="30" rx="14" ry="11" fill="#1E1508" stroke="#8A4E1A" stroke-width="0.8"/>
+      <!-- default breathing — warm gold tint -->
+      <circle cx="130" cy="30" r="14" fill="#A08050" fill-opacity="0.18" class="pod-ring"/>
+      <circle cx="130" cy="30" r="9"  fill="url(#coreNeutral)" class="pod-core"/>
+      <ellipse cx="126" cy="26" rx="3" ry="2" fill="white" fill-opacity="0.22"/>
+      <rect x="148" y="26" width="9" height="8" rx="2" fill="#3E3018" stroke="#A08050" stroke-width="0.7"/>
+      <circle cx="152.5" cy="30" r="2.5" fill="#8A4E1A" fill-opacity="0.72"/>
+    </svg>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!--   SECTION F — ANIMATION CSS TO PASTE INTO FIGMA MAKE        -->
+<!-- ============================================================ -->
+<div class="section">
+  <h1>Animation CSS — Paste into Figma Make global styles</h1>
+  <span class="label">Required for pod breathing effect on all wristband SVGs</span>
+  <pre style="background:#2E2010;border-radius:12px;padding:24px;font-size:11px;line-height:1.8;color:#C8A870;white-space:pre-wrap">
+@keyframes breathe {
+  0%, 100% { transform: scale(1);    opacity: 0.72; }
+  50%       { transform: scale(1.13); opacity: 1;    }
+}
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Pod breathing — apply to circle elements inside SVG */
+.pod-core      { animation: breathe 2.8s ease-in-out infinite;               transform-origin: center; }
+.pod-ring      { animation: breathe 2.8s ease-in-out infinite; animation-delay: -1.4s; transform-origin: center; }
+.pod-core-fast { animation: breathe 1.8s ease-in-out infinite;               transform-origin: center; }
+.pod-ring-fast { animation: breathe 1.8s ease-in-out infinite; animation-delay: -0.9s; transform-origin: center; }
+.pod-core-slow { animation: breathe 4s   ease-in-out infinite;               transform-origin: center; }
+.pod-ring-slow { animation: breathe 4s   ease-in-out infinite; animation-delay: -2s;   transform-origin: center; }
+
+/* Logo float — apply to SVG wrapper div */
+.float-logo    { animation: floatLogo 4s ease-in-out infinite; }
+  </pre>
+</div>
+
+
+<!-- ============================================================ -->
+<!--   SECTION G — STRAND OPACITY RULES QUICK REFERENCE          -->
+<!-- ============================================================ -->
+<div class="section">
+  <h1>Strand Opacity Key — Which state dims which strands</h1>
+  <span class="label">Amber = Drive strand. Gold = Balance strand. Stone = Rest strand.</span>
+  <pre style="background:#2E2010;border-radius:12px;padding:24px;font-size:11px;line-height:2;color:#C8A870;white-space:pre-wrap">
+STATE     | AMBER shadow | AMBER fill | GOLD shadow | GOLD fill | STONE fill | POD CORE            | BREATHE SPEED
+----------+--------------|------------|-------------|-----------|------------|---------------------|---------------
+WARM      | 0.5          | 1.0        | 0.5         | 1.0       | 0.8        | #ECC870→#C4722A     | 1.8s (fast)
+NEUTRAL   | 0.4          | 0.8        | 0.4         | 0.8       | 0.7        | #C8A870→#A08050     | 2.8s (default)
+COOLING   | 0.3          | 0.6        | 0.3         | 0.6       | 0.5        | #E4D8C4→#A89880     | 4.0s (slow)
+  </pre>
+</div>
+
+</body>
+</html>

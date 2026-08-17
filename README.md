@@ -5,7 +5,9 @@ NADI is a high-fidelity interactive prototype of a mobile wellness application b
 
 Try it out:)
 NADI Band design: https://lnkd.in/e3Nvm-sK
+
 NADI App: https://lnkd.in/euiAyC_y
+
 Devpost: https://lnkd.in/eUr-Nk_Z
 
 ## Overview

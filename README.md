@@ -3,6 +3,11 @@
 
 NADI is a high-fidelity interactive prototype of a mobile wellness application built as a single-page React demo. Inspired by Indian wellness frameworks, it features 13 interconnected screens rendered inside a canvas/prototype viewer with a dev toolbar for rapid iteration.
 
+Try it out:)
+NADI Band design: https://lnkd.in/e3Nvm-sK
+NADI App: https://lnkd.in/euiAyC_y
+Devpost: https://lnkd.in/eUr-Nk_Z
+
 ## Overview
 
 NADI ("pulse" in Sanskrit) is a conceptual wellness companion that blends biometric sensing, reflective journaling, and Ayurvedic energy principles into a cohesive mobile experience. The demo is built entirely in React — no backend, no native SDK — making it instantly shareable and inspectable.

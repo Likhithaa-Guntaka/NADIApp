@@ -1,9 +1,10 @@
 
-  # NADI — Mobile Wellness App Demo
+  # NADI — Mobile Wellness App
 
 NADI is a high-fidelity interactive prototype of a mobile wellness application built as a single-page React demo. Inspired by Indian wellness frameworks, it features 13 interconnected screens rendered inside a canvas/prototype viewer with a dev toolbar for rapid iteration.
 
 Try it out:)
+
 NADI Band design: https://lnkd.in/e3Nvm-sK
 
 NADI App: https://lnkd.in/euiAyC_y
